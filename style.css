@@ -507,6 +507,11 @@ footer{
     cursor: pointer;
 }
 
+.contact-phone-number{
+    text-decoration: none;
+    color: #fff;
+}
+
 
 @media (min-width:800px) {
     :root{
