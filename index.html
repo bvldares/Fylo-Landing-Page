@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +16,9 @@
           <img class="logo" src="images/logo.svg" alt="Fylo Logo">
           <nav>
               <ul class="nav-links">
-                <li class="nav-link">Features</li>
-                <li class="nav-link">Team</li>
-                <li class="nav-link">Sign In</li>
+                <li class="nav-link"><a>Features</a></li>
+                <li class="nav-link"><a>Team</a></li>
+                <li class="nav-link"><a>Sign In</a></li>
               </ul>
           </nav>
       </div>
@@ -41,25 +41,25 @@
 
           <section class="services"> <!--SERVICE SECTION START-->
 
-            <div class="service">
+            <div class="service access">
               <img src="images/icon-access-anywhere.svg" alt="pc and smartphone icon" class="service-img">
               <h3 class="service-title">Access your files, anywhere</h3>
               <p class="service-paragraph">The ability to use a smartphone, tablet, or computer to access your account means your files follow you everywhere.</p>
             </div>
 
-            <div class="service">
+            <div class="service security">
               <img src="images/icon-security.svg" alt="" class="service-img">
               <h3 class="service-title">Security you can trust</h3>
               <p class="service-paragraph">2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help secure your files.</p>
             </div>
 
-            <div class="service">
+            <div class="service collaboration">
               <img src="images/icon-collaboration.svg" alt="" class="service-img">
               <h3 class="service-title">Real-time collaboration</h3>
               <p class="service-paragraph">Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>
             </div>
 
-            <div class="service">
+            <div class="service files">
               <img src="images/icon-any-file.svg" alt="" class="service-img">
               <h3 class="service-title">Store any type of file</h3>
               <p class="service-paragraph">Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be securely stored and shared.</p>
@@ -68,7 +68,7 @@
           
           <section class="outro"> <!--OUTRO SECTION START-->
               <div class="outro-first-section">
-                  <img src="images/illustration-stay-productive.png" alt="People sharing ideas">
+                  <img src="images/illustration-stay-productive.png" alt="People sharing ideas" class="outro-img">
               </div>
               <div class="outro-second-section">
                   <h3 class="outro-intro">Stay productive, wherever you are</h3>
@@ -81,7 +81,7 @@
           
           <section class="testimonial"> <!--TESTIMONIAL SECTION-->
               
-              <div class="testimonial-one">
+              <div class="testimonial-one one">
                   <p class="testimonial-paragraph">Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
                   <div class="testimonial-user">
                       <img class="testimonial-user-propic" src="images/profile-1.jpg" alt="persona">
@@ -119,8 +119,8 @@
               <h2 class="get-started-intro">Get early access today</h2>
               <p class="get-started-paragraph">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
               <form class="get-started-form">
-                  <input type="email" id="get-started-form-mail" placeholder="email@example.com">
-                  <button type="button" class="btn get-started-btn">Get Started For Free</button>
+                  <input type="email" id="get-started-form-mail" placeholder="email@example.com" required>
+                  <button type="submit" class="btn get-started-btn">Get Started For Free</button>
               </form>
             </section> <!--GET STARTED SECTION END-->
         </div>
@@ -128,20 +128,25 @@
 
     <footer>  
       <div class="footer-wrapper">
+
           <img class="logo-footer" src="images/logo.svg" alt="Fylo logo">
-          <div class="footer-location">
+
+          <div class="footer-inner-wrapper">
+            <div class="footer-location">
               <img src="images/icon-location.svg" alt="location icon" class="footer-icon-location">
-              <p class="footer-location-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis non distinctio iste autem? Ea eligendi doloribus cumque dignissimos quo sapiente expedita beatae voluptates et earum. Similique neque atque earum reiciendis!</p>
+              <p class="footer-location-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis non distinctio iste autem? Ea eligendi doloribus cumque dignissimo.</p>
           </div>
 
-          <div class="footer-contacts">
-              <img src="images/icon-phone.svg" alt="phone icon" class="footer-icon-contacts">
-              <p class="contact-phone-number">+1-543-123-4567</p>
-          </div>
+          <div class="footer-contatti">
+            <div class="footer-contacts">
+                <img src="images/icon-phone.svg" alt="phone icon" class="footer-icon-contacts">
+                <p class="contact-phone-number">+1-543-123-4567</p>
+            </div>
 
-          <div class="footer-contacts">
-              <img src="images/icon-email.svg" alt="phone icon" class="footer-icon-contacts">
-              <p class="contact-phone-number">Fylo@contact.com</p>
+            <div class="footer-contacts">
+                <img src="images/icon-email.svg" alt="phone icon" class="footer-icon-contacts">
+                <p class="contact-phone-number">Fylo@contact.com</p>
+            </div>
           </div>
       
           
@@ -161,6 +166,9 @@
               <li class="pages-link"><a>Privacy</a></li>
             </ul>
           </div>
+          </div>
+        
+         
       </div>
     </footer>
 </body>

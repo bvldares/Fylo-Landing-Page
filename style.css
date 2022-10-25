@@ -29,6 +29,13 @@ li{
 html:focus-within {scroll-behavior: smooth;}
 a:not([class]) {text-decoration-skip-ink: auto;}
 
+a:hover,
+a:focus{
+    cursor: pointer;
+    text-decoration: 1px #fff underline;
+}
+
+
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
@@ -78,7 +85,7 @@ select {
     --color-light:#fff;
     --color-light-blue: hsl(217, 28%, 15%);
     --color-medium-blue:hsl(219, 30%, 18%);
-    --color-dark-blue:hsl(218, 28%, 13%);
+    --color-dark-blue:#171F2B
     --bg-footer:hsl(216, 53%, 9%);
     --color-btn:#58C9CB;
 
@@ -117,12 +124,17 @@ button{font-size: var(--fs-normal);}
 
 .wrapper{margin: 0 auto;}
 
+
 /*Styling NAVIGATION*/
+header{
+    background-color: var(--color-medium-blue);
+}
+
 header .wrapper{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1em;
+    padding-top: 1.5em;
     padding-bottom: 1em;
     width: 90%;
 }
@@ -130,6 +142,7 @@ header .wrapper{
 .logo{
     object-fit: contain;
     width: 25%;
+    max-width: 150px;
 }
 
 .nav-links{
@@ -150,11 +163,33 @@ header .wrapper{
 
 
 /*Styling main*/
+main{
+    background: #171F2B;
+    width: 100%;
+}
+
 
 main .wrapper{
-    width: 85%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.intro{
+    width: 100%;
+    background-color:var(--color-medium-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4em;
+    z-index: 1;
+    background-image: url(images/bg-curvy-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
 
 .intro-img{
     margin: 1em 0;
@@ -163,6 +198,11 @@ main .wrapper{
 .intro-title{
     margin-top: 1em;
     margin-bottom: .5em;
+}
+
+.intro-paragraph{
+    max-width: 500px;
+    width: 90%;
 }
 
 .btn{
@@ -176,6 +216,12 @@ main .wrapper{
     border-radius: 30px;
     margin: 1.5em 0 ;
 }
+
+.btn:hover,
+.btn:focus{
+    background-color: #57f8fb;
+    cursor: pointer;
+}
 /*Styling Main section services*/
 .service{
     text-align: center;
@@ -183,10 +229,14 @@ main .wrapper{
     flex-direction: column;
     align-items: center;
     margin-top: 4em;
+    max-width: 300px;
+    margin: 2em auto;
 }
 
 .service-img{
     margin: 1em 0;
+    height:75px;
+    object-fit: cover;
 }
 
 .service-title{
@@ -198,9 +248,33 @@ main .wrapper{
     margin-bottom: 6em;
 }
 
+@media(min-width:650px){
+    .services{
+        margin-top: 5em;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas:
+        "access security"
+        "collaboration files";
+        row-gap: 3em;
+        column-gap: 200px;
+    }
+    .access{grid-area: access;}
+    .security{grid-area: security;}
+    .collaboration{grid-area: collaboration;}
+    .files{grid-area: files;}
+
+    .service{
+        margin-top: 0;
+    }
+}
+
+
 .outro{
+    width: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .outro-first-section{
@@ -213,6 +287,7 @@ main .wrapper{
 
 .outro-paragraph{
     margin: 1em 0;
+    max-width: 550px;
 }
 
 .outro-link{
@@ -221,23 +296,42 @@ main .wrapper{
     text-decoration: none;
     color: var(--color-btn);
     position: relative;
+    max-width: fit-content;
 }
 
 .outro-link-img{
     margin-left: .5em;
 }
 
-.outro-link::after{
+.outro-link::before{
     content: "";
     position: absolute;
-    width: 40.5%;
+    width: 100%;
     height: .1em;
     top: 25px;
     background-color: var(--color-btn);
 }
 
 
+@media(min-width:750px){
+    .outro{
+        max-width: 70%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    .outro-img{
+        max-width: 450px;
+        align-self: center;
+        margin-right: 2em;
+    }
+
+
+}
+
+.testimonial{
+    transform: translateY(18%);
+}
 
 .testimonial-one{
     background-color: var(--color-medium-blue);
@@ -245,7 +339,20 @@ main .wrapper{
     padding: 1.5em;
     margin: 1em auto;
     width: 88%;
-    max-width: 330px;
+    max-width:320px;
+}
+
+.one{
+    position: relative;
+}
+
+.one::after{
+    content: url("images/bg-quotes.png");
+    position: absolute;
+    bottom:85%;
+    right:90%;
+    opacity: 70%;
+    
 }
 
 .testimonial-user{
@@ -264,6 +371,19 @@ main .wrapper{
     margin-right: .5em;
 }
 
+@media(min-width:800px){
+    .testimonial{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1em;
+    }
+
+    .testimonial-one{
+        max-width: 400px;
+    }
+}
+
+
 .get-started{
     background-color: var(--color-medium-blue);
     padding: 2em;
@@ -271,6 +391,8 @@ main .wrapper{
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
+    transform: translateY(50%);
+    
 }
 
 .get-started-paragraph{
@@ -282,6 +404,13 @@ main .wrapper{
     padding: 1em 2em;
     border-radius: 30px;
     border:none;
+    font-size: var(--fs-small);
+}
+
+@media(min-width:400px){
+    #get-started-form-mail{
+        font-size:var(--fs-normal);
+    } 
 }
 
 .get-started-btn{
@@ -291,30 +420,49 @@ main .wrapper{
 }
 
 
+
 /*FOOTER*/
 
 footer{
     background-color: var(--bg-footer);
     padding-top: 250px;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
 }
-
-
 
 .footer-wrapper{
     margin: 0 auto;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    
 }
 
+.footer-inner-wrapper{
+    margin: 0 auto;
+}
+
+@media(min-width:600px){
+    .footer-inner-wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr) );
+        column-gap: 2em;
+        justify-items: center;
+    }
+}
+
+@media(min-width:800px){
+    .footer-wrapper{
+        width: 80%;
+    }
+}
 
 .logo-footer{
     width: 180px;
     margin-bottom: 1em;
 }
+
 
 .footer-location,
 .footer-contacts{
@@ -325,10 +473,15 @@ footer{
 
 .footer-icon-location{
     height: 18px;
-    width: 16px;
     object-fit: cover;
     margin-right: 1em;
     margin-top: .5em;
+    max-width: 200px;
+}
+
+
+.footer-location-paragraph{
+    max-width: 300px;
 }
 
 .footer-icon-contacts{
@@ -337,14 +490,13 @@ footer{
     margin-right: 1em;
 }
 
-
-.footer-activities{
-    margin-top: 2em;
-}
-
 .activity-link,
 .pages-link{
     margin: .5em 0;
+}
+
+.pages-link:first-child{
+    margin: 0;
 }
 
 .activity-link a,
@@ -353,3 +505,23 @@ footer{
     color: #fff;
     cursor: pointer;
 }
+
+
+@media (min-width:800px) {
+    :root{
+        font-size: 18px;
+    }
+
+    .testimonial-paragraph,
+    .testimonial-user-name{
+        font-size: var(--fs-normal);
+    }
+    
+    .testimonial-user-job{
+        font-size: var(--fs-small);
+        white-space: nowrap;
+    }
+    
+}
+
+
