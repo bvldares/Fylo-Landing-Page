@@ -198,6 +198,7 @@ main .wrapper{
 .intro-title{
     margin-top: 1em;
     margin-bottom: .5em;
+    max-width: 90%;
 }
 
 .intro-paragraph{
